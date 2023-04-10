@@ -30,6 +30,7 @@ const ComplexSolarSystem = () => {
       </mesh>
 
       {/* Mercury */}
+
       <mesh ref={(ref) => (planetsRef.current[0] = ref)}>
         <sphereGeometry args={[0.15, 32, 32]} />
         <meshStandardMaterial emissive={'#ff9f00'} />
