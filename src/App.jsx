@@ -15,7 +15,6 @@ export default function App() {
     <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 25] }}>
       <color attach='background' args={['black']} />
       <Stars />
-      <directionalLight intensity={2} position={[0, 10, 10]} />
       <ComplexSolarSystem />
 
       <OrbitControls />

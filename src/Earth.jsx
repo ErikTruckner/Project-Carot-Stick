@@ -17,7 +17,7 @@ const Earth = ({ position }) => {
 
   return (
     <mesh position={position} ref={earthRef}>
-      <sphereGeometry args={[2, 32, 32]} />
+      <sphereGeometry args={[0.6, 32, 32]} />
       <meshPhongMaterial
         map={earthTexture}
         normalMap={earthNormalMap}

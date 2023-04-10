@@ -16,10 +16,11 @@ const ComplexSolarSystem = () => {
 
     planetsRef.current.forEach((planetRef, index) => {
       planetRef.rotation.y = elapsedTime * speeds[index]
-      planetRef.position.x =
-        Math.cos(elapsedTime * speeds[index]) * distances[index]
-      planetRef.position.z =
-        Math.sin(elapsedTime * speeds[index]) * distances[index]
+
+      // Use the same equation for all planets
+      const angle = elapsedTime * speeds[index]
+      planetRef.position.x = Math.cos(angle) * distances[index]
+      planetRef.position.z = Math.sin(angle) * distances[index]
     })
   })
 
@@ -43,7 +44,7 @@ const ComplexSolarSystem = () => {
 
       {/* Earth */}
       <Earth
-        position={[0, 0, 6]}
+        position={[0, 0, 5]}
         ref={(ref) => (planetsRef.current[2] = ref)}
       />
 
