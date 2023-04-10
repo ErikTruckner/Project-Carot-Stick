@@ -42,10 +42,10 @@ const ComplexSolarSystem = () => {
       </mesh>
 
       {/* Earth */}
-      <mesh ref={(ref) => (planetsRef.current[2] = ref)}>
-        <sphereGeometry args={[0.25, 32, 32]} />
-        <meshStandardMaterial emissive={'#ffdab9'} />
-      </mesh>
+      <Earth
+        position={[0, 0, 6]}
+        ref={(ref) => (planetsRef.current[2] = ref)}
+      />
 
       {/* Mars */}
       <mesh ref={(ref) => (planetsRef.current[3] = ref)}>

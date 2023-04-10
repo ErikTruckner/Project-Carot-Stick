@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 
-const Earth = (props) => {
+const Earth = ({ position }) => {
   const earthRef = useRef()
 
   const [earthTexture, earthNormalMap, earthSpecularMap] = useTexture([
@@ -16,18 +16,12 @@ const Earth = (props) => {
   })
 
   return (
-    <mesh {...props} ref={earthRef}>
-      <sphereGeometry args={[3, 32, 32]} />
+    <mesh position={position} ref={earthRef}>
+      <sphereGeometry args={[2, 32, 32]} />
       <meshPhongMaterial
         map={earthTexture}
         normalMap={earthNormalMap}
         specularMap={earthSpecularMap}
-      />
-      <pointLight
-        color='#ffffff'
-        intensity={1.5}
-        distance={20}
-        position={[0, 0, 0]}
       />
     </mesh>
   )

@@ -6,8 +6,7 @@ import FloatingText from './FloatingText'
 import Cube from './Cube'
 import Ship from './Ship'
 // import FarmBook from './modelComps/FarmBook'
-// import ComplexSolarSystem from './ComplexSolarSystem'
-import Earth from './Earth'
+import ComplexSolarSystem from './ComplexSolarSystem'
 
 export default function App() {
   console.log(Canvas)
@@ -17,8 +16,7 @@ export default function App() {
       <color attach='background' args={['black']} />
       <Stars />
       <directionalLight intensity={2} position={[0, 10, 10]} />
-      {/* <ComplexSolarSystem /> */}
-      <Earth />
+      <ComplexSolarSystem />
 
       <OrbitControls />
     </Canvas>
