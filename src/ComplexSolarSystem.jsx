@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
+import Sun from './Sun'
 
 const ComplexSolarSystem = () => {
   const sunRef = useRef()
@@ -24,10 +25,7 @@ const ComplexSolarSystem = () => {
   return (
     <>
       {/* Sun */}
-      <mesh ref={sunRef}>
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshBasicMaterial color={0xffff00} />
-      </mesh>
+      <Sun />
 
       {/* Mercury */}
 
