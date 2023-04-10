@@ -27,7 +27,7 @@ const ComplexSolarSystem = () => {
   return (
     <>
       {/* Sun */}
-      <Sun />
+      {/* <Sun /> */}
 
       {/* Mercury */}
 
@@ -44,7 +44,7 @@ const ComplexSolarSystem = () => {
 
       {/* Earth */}
       <Earth
-        position={[0, 0, 5]}
+        position={[0, 0, 8]}
         ref={(ref) => (planetsRef.current[2] = ref)}
       />
 

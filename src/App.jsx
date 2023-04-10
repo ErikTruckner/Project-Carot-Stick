@@ -12,9 +12,10 @@ export default function App() {
   console.log(Canvas)
 
   return (
-    <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 25] }}>
+    <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }}>
       <color attach='background' args={['black']} />
       <Stars />
+      <directionalLight intensity={2} position={[0, 10, 10]} />
       <ComplexSolarSystem />
 
       <OrbitControls />
