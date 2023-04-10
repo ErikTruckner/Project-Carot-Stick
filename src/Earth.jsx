@@ -1,45 +1,33 @@
 import React, { useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { useFrame } from '@react-three/fiber'
+import { useTexture } from '@react-three/drei'
 
-const Earth = () => {
-  const mesh = useRef()
-  const textureLoader = new THREE.TextureLoader()
-  const normalMap = textureLoader.load(
-    'https://raw.githubusercontent.com/jeremyvaught/planet-earth/master/src/assets/textures/normalmap.jpg'
-  )
-  const earthMap = textureLoader.load(
-    'https://raw.githubusercontent.com/jeremyvaught/planet-earth/master/src/assets/textures/earth.jpg'
-  )
-  const specularMap = textureLoader.load(
-    'https://raw.githubusercontent.com/jeremyvaught/planet-earth/master/src/assets/textures/specularmap.jpg'
-  )
+const Earth = (props) => {
+  const earthRef = useRef()
 
-  const loader = new GLTFLoader()
-  loader.load(
-    'https://raw.githubusercontent.com/jeremyvaught/planet-earth/master/src/assets/models/earth/scene.gltf',
-    (gltf) => {
-      mesh.current.geometry = gltf.scene.children[0].geometry
-    }
-  )
+  const [earthTexture, earthNormalMap, earthSpecularMap] = useTexture([
+    '/assets/earth_day.jpg',
+    '/assets/earth_normal.jpg',
+    '/assets/earth_specular.jpg',
+  ])
 
   useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.y += 0.001
-    }
+    earthRef.current.rotation.y += 0.002
   })
 
   return (
-    <mesh ref={mesh}>
-      <sphereBufferGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial
-        map={earthMap}
-        normalMap={normalMap}
-        normalScale={new THREE.Vector2(0.7, 0.7)}
-        specularMap={specularMap}
-        metalness={0.1}
-        roughness={0.5}
+    <mesh {...props} ref={earthRef}>
+      <sphereGeometry args={[3, 32, 32]} />
+      <meshPhongMaterial
+        map={earthTexture}
+        normalMap={earthNormalMap}
+        specularMap={earthSpecularMap}
+      />
+      <pointLight
+        color='#ffffff'
+        intensity={1.5}
+        distance={20}
+        position={[0, 0, 0]}
       />
     </mesh>
   )

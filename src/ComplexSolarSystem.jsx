@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import Sun from './Sun'
+import Earth from './Earth'
 
 const ComplexSolarSystem = () => {
   const sunRef = useRef()
@@ -42,8 +43,8 @@ const ComplexSolarSystem = () => {
 
       {/* Earth */}
       <mesh ref={(ref) => (planetsRef.current[2] = ref)}>
-        <sphereGeometry args={[0.3, 32, 32]} />
-        <meshStandardMaterial emissive={'#0077be'} />
+        <sphereGeometry args={[0.25, 32, 32]} />
+        <meshStandardMaterial emissive={'#ffdab9'} />
       </mesh>
 
       {/* Mars */}
