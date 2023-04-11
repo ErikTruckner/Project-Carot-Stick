@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 
-const Earth = ({ position }) => {
+const Earth = ({ position, displacementScale }) => {
   const earthRef = useRef()
 
   const [earthTexture, earthNormalMap, earthSpecularMap, earthDisplacementMap] =
@@ -25,7 +25,7 @@ const Earth = ({ position }) => {
         normalMap={earthNormalMap}
         specularMap={earthSpecularMap}
         displacementMap={earthDisplacementMap}
-        displacementScale={0.1}
+        displacementScale={displacementScale}
       />
     </mesh>
   )
