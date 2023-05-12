@@ -48,7 +48,7 @@ function Box({ position, color }) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={color} />
+      <meshBasicMaterial color={color} />
     </mesh>
   )
 }

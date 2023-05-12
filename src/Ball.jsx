@@ -3,9 +3,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-function OrangeBox({ position, color }) {
+function Ball({ position, color }) {
   // This reference will give us direct access to the mesh
-  const mesh = useRef()
+  const meshOB = useRef()
 
   const { camera } = useThree()
 
@@ -27,12 +27,12 @@ function OrangeBox({ position, color }) {
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
-    // mesh.current.rotation.x += delta
+    meshOB.current.rotation.x += delta
 
     const originalCameraLookAt = new THREE.Vector3(0, 0, 0)
 
     if (cameraMoved) {
-      camera.lookAt(mesh.current.position)
+      camera.lookAt(meshOB.current.position)
     } else {
       camera.lookAt(originalCameraLookAt)
     }
@@ -42,15 +42,15 @@ function OrangeBox({ position, color }) {
   return (
     <mesh
       position={position}
-      ref={mesh}
+      ref={meshOB}
       scale={active ? 1.5 : 1}
       onClick={toggleCameraMoved}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={color} />
+      <sphereGeometry args={[1, 5, 1]} />
+      <meshPhongMaterial color={color} />
     </mesh>
   )
 }
 
-export default OrangeBox
+export default Ball
