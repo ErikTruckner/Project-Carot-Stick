@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-function Box({ position, color }) {
+function OrangeBox({ position, color }) {
   // This reference will give us direct access to the mesh
   const mesh = useRef()
 
@@ -27,7 +27,7 @@ function Box({ position, color }) {
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
-    mesh.current.rotation.x += delta
+    // mesh.current.rotation.x += delta
 
     const originalCameraLookAt = new THREE.Vector3(0, 0, 0)
 
@@ -53,4 +53,4 @@ function Box({ position, color }) {
   )
 }
 
-export default Box
+export default OrangeBox

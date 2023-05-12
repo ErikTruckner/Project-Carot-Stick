@@ -3,16 +3,24 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import CameraPositionLogger from './hooks/CameraPositionLogger'
 import Box from './Box'
+import OrangeBox from './OrangeBox'
 
-export default function App() {
+import { useRef } from 'react'
+
+export default function App({ event }) {
   return (
-    <Canvas>
-      <CameraPositionLogger />
-      <OrbitControls />
+    <Canvas
+      camera={{
+        fov: 75,
+        near: 1,
+        far: 1000,
+        position: [0, 0, 9],
+      }}>
+      {/* <OrbitControls /> */}
+      <CameraPositionLogger event='mousedown' />
       <ambientLight />
-
-      <Box position={[-3.2, 0, 0]} />
-      <Box position={[3.2, 0, 0]} />
+      <OrangeBox position={[-4, 0, 0]} color={'orange'} />
+      <Box position={[9, 0, 0]} color={'green'} />
     </Canvas>
   )
 }
