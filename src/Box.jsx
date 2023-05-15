@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
@@ -27,11 +27,7 @@ function Box({ position, color }) {
   }
 
   //
-
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => {
-    mesh.current.rotation.x += delta
-    //
+  const tweenLogic = useCallback(() => {
     TWEEN.update()
 
     const cameraTargetPosition = mesh.current.position
@@ -82,6 +78,13 @@ function Box({ position, color }) {
     camera.position.copy(cameraPosition)
     camera.lookAt(cameraTarget)
     camera.updateProjectionMatrix()
+  })
+
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => {
+    mesh.current.rotation.x += delta
+    //
+    tweenLogic()
   })
 
   // console.log(mesh)
