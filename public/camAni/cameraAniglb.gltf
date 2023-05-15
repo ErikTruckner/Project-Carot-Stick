@@ -1,0 +1,401 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v1.7.33",
+    "version": "2.0"
+  },
+  "extensionsUsed": ["KHR_draco_mesh_compression", "KHR_lights_punctual"],
+  "extensionsRequired": ["KHR_draco_mesh_compression", "KHR_lights_punctual"],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "color": [1, 1, 1],
+          "intensity": 1000,
+          "type": "point",
+          "name": "Light"
+        }
+      ]
+    }
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [1, 4, 5]
+    }
+  ],
+  "nodes": [
+    {
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      },
+      "name": "Light_Orientation",
+      "rotation": [-0.7071067690849304, 0, 0, 0.7071067690849304]
+    },
+    {
+      "children": [0],
+      "name": "Light",
+      "rotation": [
+        0.16907575726509094, 0.7558803558349609, -0.27217137813568115,
+        0.570947527885437
+      ],
+      "translation": [4.076245307922363, 5.903861999511719, -1.0054539442062378]
+    },
+    {
+      "camera": 0,
+      "name": "Camera_Orientation",
+      "rotation": [-0.7071067690849304, 0, 0, 0.7071067690849304]
+    },
+    {
+      "children": [2],
+      "extras": {
+        "v3d": {}
+      },
+      "name": "Camera",
+      "rotation": [
+        0.4835360646247864, 0.3368716239929199, -0.20870362222194672,
+        0.7804826498031616
+      ],
+      "scale": [
+        -0.33048582077026367, -0.33048582077026367, -0.33048582077026367
+      ],
+      "translation": [
+        -2.432009220123291, -1.1967389583587646, -2.2888755798339844
+      ]
+    },
+    {
+      "children": [3],
+      "extras": {
+        "v3d": {}
+      },
+      "name": "Empty",
+      "scale": [-3.025848388671875, -3.025848388671875, -3.025848388671875],
+      "translation": [
+        -0.14000000059604645, 2.217158794403076, -0.03999999910593033
+      ]
+    },
+    {
+      "extras": {
+        "v3d": {}
+      },
+      "mesh": 0,
+      "name": "Cube",
+      "scale": [0.7527258992195129, 0.7527258992195129, 0.7527258992195129],
+      "translation": [0, 1.2841497659683228, 0]
+    }
+  ],
+  "cameras": [
+    {
+      "name": "Camera",
+      "perspective": {
+        "aspectRatio": 1.7777777777777777,
+        "yfov": 0.39959652046304894,
+        "zfar": 100,
+        "znear": 0.10000000149011612
+      },
+      "type": "perspective"
+    }
+  ],
+  "animations": [
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 3,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 3,
+            "path": "rotation"
+          }
+        },
+        {
+          "sampler": 2,
+          "target": {
+            "node": 3,
+            "path": "scale"
+          }
+        }
+      ],
+      "name": "CameraAction.001",
+      "samplers": [
+        {
+          "input": 7,
+          "interpolation": "LINEAR",
+          "output": 8
+        },
+        {
+          "input": 7,
+          "interpolation": "LINEAR",
+          "output": 9
+        },
+        {
+          "input": 7,
+          "interpolation": "LINEAR",
+          "output": 10
+        }
+      ]
+    },
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 4,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 4,
+            "path": "rotation"
+          }
+        },
+        {
+          "sampler": 2,
+          "target": {
+            "node": 4,
+            "path": "scale"
+          }
+        }
+      ],
+      "name": "EmptyAction.001",
+      "samplers": [
+        {
+          "input": 11,
+          "interpolation": "LINEAR",
+          "output": 12
+        },
+        {
+          "input": 13,
+          "interpolation": "LINEAR",
+          "output": 14
+        },
+        {
+          "input": 11,
+          "interpolation": "LINEAR",
+          "output": 15
+        }
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "extras": {
+        "v3d": {
+          "line_rendering_settings": {}
+        },
+        "targetNames": ["Shrinkwrap"]
+      },
+      "name": "Cube.001",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1,
+                "TANGENT": 2,
+                "TEXCOORD_0": 3
+              }
+            }
+          },
+          "indices": 4,
+          "mode": 4,
+          "targets": [
+            {
+              "POSITION": 5,
+              "NORMAL": 6
+            }
+          ]
+        }
+      ],
+      "weights": [0]
+    }
+  ],
+  "accessors": [
+    {
+      "componentType": 5126,
+      "count": 24,
+      "max": [1, 1, 1],
+      "min": [-1, -1, -1],
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC4"
+    },
+    {
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "max": [0.24606001377105713, 0.28558045625686646, 0.2460600733757019],
+      "min": [-0.24605989456176758, -0.19149965047836304, -0.2460598349571228],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 2,
+      "max": [10],
+      "min": [0.041666666666666664],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 2,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 2,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 2,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 2,
+      "max": [20],
+      "min": [0.041666666666666664],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 2,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 480,
+      "max": [20],
+      "min": [0.041666666666666664],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 480,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 2,
+      "type": "VEC3"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 395,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 396
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 684
+    },
+    {
+      "buffer": 0,
+      "byteLength": 8,
+      "byteOffset": 972
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24,
+      "byteOffset": 980
+    },
+    {
+      "buffer": 0,
+      "byteLength": 32,
+      "byteOffset": 1004
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24,
+      "byteOffset": 1036
+    },
+    {
+      "buffer": 0,
+      "byteLength": 8,
+      "byteOffset": 1060
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24,
+      "byteOffset": 1068
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1920,
+      "byteOffset": 1092
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7680,
+      "byteOffset": 3012
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24,
+      "byteOffset": 10692
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 10716,
+      "uri": "cameraAniglb.bin"
+    }
+  ]
+}

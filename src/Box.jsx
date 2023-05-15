@@ -3,9 +3,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-function Box({ position, color }) {
+function Box({ position, color, cameraMoved, onToggleCameraMoved, boxRef }) {
   // This reference will give us direct access to the mesh
-  const mesh = useRef()
+  const mesh = boxRef
 
   const { camera } = useThree()
 
@@ -18,11 +18,10 @@ function Box({ position, color }) {
   )
 
   const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, 0, 0))
-
-  const [cameraMoved, setCameraMoved] = useState(false)
-
+  //
+  //
   const toggleCameraMoved = () => {
-    setCameraMoved((prevCameraMoved) => !prevCameraMoved)
+    onToggleCameraMoved()
   }
 
   // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -38,11 +37,18 @@ function Box({ position, color }) {
     }
   })
 
+  // console.log(mesh)
+
+  //left - orange box : uuid: 'a571f32c-f7b0-4089-a694-2696b20729c6'
+
   // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh
       position={position}
-      ref={mesh}
+      ref={(ref) => {
+        mesh.current = ref
+        boxRef.current = ref
+      }}
       scale={active ? 1.5 : 1}
       onClick={toggleCameraMoved}
       onPointerOver={(event) => setHover(true)}
