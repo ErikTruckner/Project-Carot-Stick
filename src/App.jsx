@@ -12,7 +12,6 @@ export default function App({ event }) {
   //
 
   //
-  //
   return (
     <Canvas
       camera={{
@@ -24,8 +23,8 @@ export default function App({ event }) {
       {/* <OrbitControls /> */}
       <CameraPositionLogger event='mousedown' />
       <ambientLight />
-      <Box position={[-4, 0, 0]} color={'orange'} />
-      <Box position={[9, 0, 0]} color={'green'} />
+
+      <Box position={[9, 0, 0]} color='green' />
     </Canvas>
   )
 }

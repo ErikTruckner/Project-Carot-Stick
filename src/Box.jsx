@@ -50,7 +50,6 @@ function Box({ position, color }) {
       // Add the uuid property
       position={position}
       ref={mesh}
-      scale={active ? 1.5 : 1}
       onClick={toggleCameraMoved}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
