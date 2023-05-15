@@ -10,15 +10,8 @@ import { useRef } from 'react'
 
 export default function App({ event }) {
   //
-  const [cameraMoved, setCameraMoved] = useState(false)
 
-  const toggleCameraMoved = () => {
-    setCameraMoved((prevCameraMoved) => !prevCameraMoved)
-  }
   //
-  // Create separate refs for each box
-  const orangeBoxRef = useRef()
-  const greenBoxRef = useRef()
   //
   return (
     <Canvas
@@ -31,20 +24,8 @@ export default function App({ event }) {
       {/* <OrbitControls /> */}
       <CameraPositionLogger event='mousedown' />
       <ambientLight />
-      <Box
-        position={[-4, 0, 0]}
-        color={'orange'}
-        cameraMoved={cameraMoved}
-        onToggleCameraMoved={toggleCameraMoved}
-        boxRef={orangeBoxRef}
-      />
-      <Box
-        position={[9, 0, 0]}
-        color={'green'}
-        cameraMoved={cameraMoved}
-        onToggleCameraMoved={toggleCameraMoved}
-        boxRef={greenBoxRef} // Pass the greenBoxRef as a prop
-      />
+      <Box position={[-4, 0, 0]} color={'orange'} />
+      <Box position={[9, 0, 0]} color={'green'} />
     </Canvas>
   )
 }
