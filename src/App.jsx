@@ -6,6 +6,7 @@ import { OrbitControls } from '@react-three/drei'
 import CameraPositionLogger from './hooks/CameraPositionLogger'
 import Box from './Box'
 import Ball from './Ball'
+import FarmBook from './modelComps/FarmBook'
 
 import { useRef } from 'react'
 
@@ -19,15 +20,16 @@ export default function App({ event }) {
         fov: 75,
         near: 1,
         far: 1000,
-        position: [0, 0, 9],
+        position: [13, -0.16, 1.89],
       }}>
       <color attach='background' args={['black']} />
-      {/* <OrbitControls /> */}
+      <OrbitControls />
       <CameraPositionLogger event='mousedown' />
       <Stars />
-      <spotLight intensity={1} position={(0, 0, 9)} />
+      <spotLight intensity={1} position={(0, 0, 16)} />
       <ambientLight intensity={0.1} />
-      <Box position={[9, 0, 0]} color='green' />
+      <FarmBook />
+      {/* <Box position={[9, 0, 0]} color='green' /> */}
     </Canvas>
   )
 }
